@@ -59,6 +59,9 @@ resource "docker_container" "dind" {
     name    = docker_network.my_network.name
     aliases = ["docker"]
   }
+
+  privileged = true
+  
 }
 
 #lo mismo para el contenedor de jenkins pero ademas este tiene variables de entorno
