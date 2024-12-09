@@ -71,8 +71,9 @@ resource "docker_container" "jenkins" {
     external = 8081
   }
   env = [
-    "VOLUME=/path/to/sources:/src",
-    "IMAGE=cdrx/pyinstaller-linux:python2"
+    "DOCKER_HOST=tcp://docker:2376",
+    "DOCKER_CERT_PATH=/certs/client",
+    "DOCKER_TLS_VERIFY=1"
   ]
 
   volumes {
